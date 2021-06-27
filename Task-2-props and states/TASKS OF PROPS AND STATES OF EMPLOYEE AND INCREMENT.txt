@@ -1,0 +1,86 @@
+<---------------TASK1----------------->
+import React from 'react';
+
+const Employee=(props) =>{
+    const pro={
+        color:"skyblue",
+        fontFamily: "'Staatliches', cursive"
+
+    }
+    console.log("props data:",props)
+    return(
+    <div>
+    <h2 style={pro}>Employee Name: {props.employeename}Rollno: {props.rollno} Companyname: {props.companyname} Desination:{props.desination} rating:{props.rating} </h2>
+    
+
+    </div>
+    )
+    }
+
+export default Employee;
+<-------------TASK1----------------------->
+
+
+
+
+
+
+<---------------TASK2---------------------->
+import React, { Component } from 'react';
+
+class Increment extends Component{
+
+    
+    constructor(){
+        super();
+        this.state={
+            count: 0
+            
+        }
+    
+    }
+    increment(){
+        this.setState({
+            count : this.state.count +1
+        })
+    }
+    decrement(){
+        this.setState({
+            count : this.state.count -1
+        })
+    }
+    reset(){
+        this.setState({
+            count :0
+        })
+    }
+    
+    render(){
+
+        const sub={
+            color:"white"
+        };
+        const but={
+            backgroundColor: "DodgerBlue"
+        };
+
+        
+        return( 
+            <div style={sub}>
+            <h1>OPERATIONS: {this.state.count}</h1>
+            
+            <button style={but} onClick={()=>this.increment()}>INCREMENT</button><br></br>
+            <button style={but} onClick={()=>this.decrement()}>DECREMENT</button><br></br>
+            <button style={but} onClick={()=>this.reset()}>RESET</button>
+        
+        </div>
+        )
+        }
+}
+
+export default Increment;
+<----------------------TASK2----------------------->
+
+
+
+

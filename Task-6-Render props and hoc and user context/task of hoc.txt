@@ -1,0 +1,88 @@
+---------------------<hoc used>------------------
+import React, { Component } from 'react'
+import Hd from './Hand'
+
+class Hand2 extends Component {
+   
+   
+        
+    
+    render() {
+        
+        return (
+            <div className="a">
+                <table>
+                    <h1>
+                    <tr>
+                        
+                
+               <tr> NAME: {this.props.count1}</tr><tr>DOB: {this.props.count2}</tr><tr>POSITION: {this.props.count3}</tr>
+               </tr>
+               <tr>
+                <button onClick={this.props.chng}>CLIK HERE FOR SANTHOSH DETAILS
+                
+                </button>
+            </tr>
+                
+                
+                </h1>
+                </table>
+            </div>
+        )
+    }
+}
+
+export default Hd(Hand2)
+--------------------------------------------------
+import React, { Component } from 'react'
+
+
+const Hd=(A)=>{
+class Hand extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            username:"ASWIN",
+            dob:"19/08/2000",
+            posting:"TRAINEE",
+            n:"CHANGE TO SANTHOSH"
+        }
+    }
+    changeto=()=>{
+        this.setState({
+            username:"SANTHOSH",
+            dob:"9/09/2000",
+            posting:"ASSOSIATE ENGINEER",
+            n:"CHANGE TO ASWIN"
+        })
+    }
+    ch=()=>{
+        this.setState({
+            username:"",
+            dob:"9/09/2000",
+            posting:"ASSOSIATE ENGINEER",
+            n:"CHANGE TO ASWIN"
+        })
+    }
+
+    render() {
+        return (
+            <div >
+                
+                <A
+                count1={this.state.username} 
+                count2={this.state.dob}
+                count3={this.state.posting}
+                cnt4={this.state.n}
+                chng={this.changeto}
+                ch={this.ch}
+                
+                />
+            </div>
+        )
+    }
+}
+return Hand;
+};
+
+export default Hd

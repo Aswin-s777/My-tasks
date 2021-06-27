@@ -1,0 +1,48 @@
+--------------------<render props usedfunction>-------------------------------
+import React, { Component } from 'react'
+
+
+//renderprops -> render-> arrow function -> handleover component-> props
+class Renderprops extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            username:"REACT TO WELCOME"
+        }
+    }
+    changeto=()=>{
+        this.setState({
+            username:"WELCOME TO REACT"
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                this.props.render(
+                    this.state.username,this.changeto
+                )}
+            </div>
+        )
+    }
+}
+
+
+export default Renderprops
+-----------------<mouse over used>-------------------------
+import React, { Component } from 'react'
+class Handleover extends Component {
+    
+    render() {
+        return (
+            <div>
+                
+                <h1 onMouseOver={this.props.chng}>{this.props.count}</h1>
+            </div>
+        )
+    }
+}
+
+export default Handleover
+
